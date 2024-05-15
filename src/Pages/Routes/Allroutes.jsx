@@ -17,6 +17,7 @@ const router = createBrowserRouter([
       {
         path: "/",
         element: <Homepage />,
+        loader: () => fetch("http://localhost:5000/all-crafts"),
       },
       {
         path: "/all-crafts",
@@ -27,12 +28,16 @@ const router = createBrowserRouter([
         element: <AddCraftPage />,
       },
       {
-        path: "/update-crafts/:id",
+        path: "/update-crafts/craft/:id",
         element: <UpdateCraftPage />,
+        loader: ({ params }) =>
+          fetch(`http://localhost:5000/update-crafts/${params.id}`),
       },
       {
-        path: "/view-details/:id",
+        path: "/view-details/craft/:id",
         element: <Viewdetails />,
+        loader: ({ params }) =>
+          fetch(`http://localhost:5000/view-details/${params.id}`),
       },
       {
         path: "/sign-up",
