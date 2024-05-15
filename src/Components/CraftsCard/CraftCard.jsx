@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
+import Swal from "sweetalert2";
 
-const CraftCard = ({ eachCardData }) => {
+const CraftCard = ({ craft, crafts, setCrafts }) => {
   const {
     _id,
     image_url,
@@ -14,16 +15,38 @@ const CraftCard = ({ eachCardData }) => {
     stock_status,
     user_email,
     user_name,
-  } = eachCardData;
+  } = craft;
+  const handleDelete = (_id) => {
+    console.log(_id);
+    Swal.fire({
+      title: "Are you sure?",
+      text: "You won't be able to revert this!",
+      icon: "warning",
+      showCancelButton: true,
+      confirmButtonColor: "#3085d6",
+      cancelButtonColor: "#d33",
+      confirmButtonText: "Yes, delete it!",
+    }).then((result) => {
+      if (result.isConfirmed) {
+        fetch(`http://localhost:5000/delete-crafts/craft/${_id}`, {
+          method: "DELETE",
+        })
+          .then((res) => res.json())
+          .then((data) => {
+            console.log(data);
+            if (data.deletedCount > 0) {
+              Swal.fire("Deleted!", "Your Coffee has been deleted.", "success");
+              const remaining = crafts.filter((cruf) => cruf._id !== _id);
+              setCrafts(remaining);
+            }
+          });
+      }
+    });
+  };
   return (
     <>
       <div className="flex flex-col max-w-lg p-6 space-y-6 overflow-hidden rounded-lg shadow-md dark:bg-gray-50 dark:text-gray-800">
         <div className="flex space-x-4">
-          <img
-            alt=""
-            src="https://source.unsplash.com/100x100/?portrait"
-            className="object-cover w-12 h-12 rounded-full shadow dark:bg-gray-500"
-          />
           <div className="flex flex-col space-y-1">
             <a
               rel="noopener noreferrer"
@@ -32,7 +55,7 @@ const CraftCard = ({ eachCardData }) => {
             >
               {user_name}
             </a>
-            <span className="text-xs dark:text-gray-600">4 hours ago</span>
+            <span className="text-xs dark:text-gray-600">{user_email}</span>
           </div>
         </div>
         <div>
@@ -61,6 +84,10 @@ const CraftCard = ({ eachCardData }) => {
           >
             Update
           </Link>
+          <button onClick={() => handleDelete(_id)} className="btn bg-red-600">
+            {" "}
+            Delete
+          </button>
           <div className="space-x-2">
             <button
               aria-label="Share this post"

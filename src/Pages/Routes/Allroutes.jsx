@@ -31,13 +31,13 @@ const router = createBrowserRouter([
         path: "/update-crafts/craft/:id",
         element: <UpdateCraftPage />,
         loader: ({ params }) =>
-          fetch(`http://localhost:5000/update-crafts/${params.id}`),
+          fetch(`http://localhost:5000/update-crafts/craft/${params.id}`),
       },
       {
         path: "/view-details/craft/:id",
         element: <Viewdetails />,
         loader: ({ params }) =>
-          fetch(`http://localhost:5000/view-details/${params.id}`),
+          fetch(`http://localhost:5000/view-details/craft/${params.id}`),
       },
       {
         path: "/sign-up",

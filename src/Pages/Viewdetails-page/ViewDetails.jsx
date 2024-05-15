@@ -1,7 +1,9 @@
+import { useState } from "react";
 import { useLoaderData } from "react-router-dom";
 
 const ViewDetails = () => {
   const loadDetails = useLoaderData();
+  const [craftDetails, setCraftDetails] = useState(loadDetails);
 
   return (
     <>
@@ -13,17 +15,17 @@ const ViewDetails = () => {
               href="#"
               className="mb-0 capitalize dark:text-gray-800"
             >
-              Photography
+              {craftDetails._id}
             </a>
           </div>
           <a rel="noopener noreferrer" href="#">
-            See All
+            ID: {craftDetails._id}
           </a>
         </div>
         <div className="space-y-4">
           <div className="space-y-2">
             <img
-              src="https://source.unsplash.com/random/480x360/?4"
+              src={craftDetails.image_url}
               alt=""
               className="block object-cover object-center w-full rounded-md h-72 dark:bg-gray-500"
             />
@@ -34,13 +36,11 @@ const ViewDetails = () => {
           <div className="space-y-2">
             <a rel="noopener noreferrer" href="#" className="block">
               <h3 className="text-xl font-semibold dark:text-violet-600">
-                Facere ipsa nulla corrupti praesentium pariatur architecto
+                {craftDetails.item_name}
               </h3>
             </a>
             <p className="leading-snug dark:text-gray-600">
-              Lorem ipsum dolor sit amet consectetur, adipisicing elit.
-              Repellat, excepturi. Lorem ipsum dolor sit amet consectetur,
-              adipisicing elit. Repellat, excepturi.
+              {craftDetails.short_desc}
             </p>
           </div>
         </div>

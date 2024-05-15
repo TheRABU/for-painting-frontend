@@ -1,9 +1,10 @@
-import { useState } from "react";
 import { useLoaderData } from "react-router-dom";
 import CraftCard from "./CraftCard";
+import { useState } from "react";
 
 const CraftAndArtSection = () => {
-  const allCrafts = useLoaderData();
+  const loadCraftData = useLoaderData();
+  const [crafts, setCrafts] = useState(loadCraftData);
 
   return (
     <>
@@ -17,8 +18,13 @@ const CraftAndArtSection = () => {
             </p>
           </div>
           <div className="grid grid-cols-1 gap-x-4 gap-y-8 md:grid-cols-2 lg:grid-cols-4">
-            {allCrafts.map((eachCardData) => (
-              <CraftCard key={eachCardData._id} eachCardData={eachCardData} />
+            {crafts.map((craft) => (
+              <CraftCard
+                key={craft._id}
+                craft={craft}
+                crafts={crafts}
+                setCrafts={setCrafts}
+              />
             ))}
           </div>
         </div>
