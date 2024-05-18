@@ -9,6 +9,7 @@ const Layout = () => {
       </div>
       <Outlet />
       <div>
+        <hr className=" bg-slate-300" />
         <Footer />
       </div>
     </div>

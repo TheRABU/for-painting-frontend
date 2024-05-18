@@ -2,7 +2,6 @@ import {
   GithubAuthProvider,
   GoogleAuthProvider,
   createUserWithEmailAndPassword,
-  getAuth,
   onAuthStateChanged,
   signInWithEmailAndPassword,
   signInWithPopup,
@@ -10,10 +9,9 @@ import {
   updateProfile,
 } from "firebase/auth";
 import { createContext, useEffect, useState } from "react";
-import app from "../Firebase/firebase.init";
+import auth from "../Firebase/firebase.init";
 
 export const AuthContext = createContext(null);
-const auth = getAuth(app);
 
 // main function starts here...
 const AuthProvider = ({ children }) => {

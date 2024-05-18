@@ -92,7 +92,7 @@ const NavBar = () => {
     logOut().then().catch();
   };
   return (
-    <div className="navbar bg-purple-200 px-3 py-5 md:px-10">
+    <div className="navbar bg-purple-300 px-3 py-5 md:px-10">
       <div className="navbar-start">
         <div className="dropdown">
           <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
@@ -153,11 +153,12 @@ const NavBar = () => {
             </div>
           </div>
         )}
-        {user && (
+        {/* User Update Profile */}
+        {/* {user && (
           <button className="btn btn-link">
             <Link to="/update-profile">Update Profile</Link>{" "}
           </button>
-        )}
+        )} */}
         {/* <div
           tabIndex={0}
           role="button"
