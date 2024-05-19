@@ -9,10 +9,13 @@ import SignInPage from "../Signin-page/SignInPage";
 import SignUpPage from "../Signup-page/SignUpPage";
 import MyCraftPage from "../My-craft-page/MyCraftPage";
 import AboutPage from "../Aboutpage/AboutPage";
+import PrivateRoutes from "../Routes/PrivateRoute";
+import ErrorPage from "../ErrorPage/ErrorPage";
 const router = createBrowserRouter([
   {
     path: "/",
     element: <Layout />,
+    errorElement: <ErrorPage />,
     children: [
       {
         path: "/",
@@ -29,16 +32,31 @@ const router = createBrowserRouter([
         element: <AddCraftPage />,
       },
       {
-        path: "/update-crafts/craft/:id",
+        path: "/update-crafts/:id",
         element: <UpdateCraftPage />,
         loader: ({ params }) =>
-          fetch(`http://localhost:5000/update-crafts/craft/${params.id}`),
+          fetch(`http://localhost:5000/user-items/${params.id}`),
       },
       {
         path: "/view-details/craft/:id",
-        element: <Viewdetails />,
+        element: (
+          <PrivateRoutes>
+            <Viewdetails />,
+          </PrivateRoutes>
+        ),
+
         loader: ({ params }) =>
           fetch(`http://localhost:5000/view-details/craft/${params.id}`),
+      },
+      {
+        path: "/my-listed-crafts",
+        element: (
+          <PrivateRoutes>
+            <MyCraftPage />,
+          </PrivateRoutes>
+        ),
+        // loader: ({ params }) =>
+        //   fetch(`http://localhost:5000/user/${params.email}`),
       },
       {
         path: "/sign-up",

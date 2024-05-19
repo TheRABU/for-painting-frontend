@@ -15,7 +15,7 @@ const SignInPage = () => {
     const email = form.get("email");
     const password = form.get("password");
     signIn(email, password)
-      .then(navigate(location?.state ? location.state : "/"))
+      .then(navigate(location.state ? location.state : "/"))
       .catch((error) => {
         console.log(error);
       });
