@@ -1,6 +1,7 @@
 import { useContext } from "react";
 import { Link } from "react-router-dom";
 import { AuthContext } from "../../AuthProvider/AuthProvider";
+import ThemeToggle from "../ThemeToggle/ThemeToggle";
 const NavBar = () => {
   const { user, logOut } = useContext(AuthContext);
   const navItems = (
@@ -127,6 +128,7 @@ const NavBar = () => {
         <ul className="menu menu-horizontal px-">{navItems}</ul>
       </div>
       <div className="navbar-end">
+        <ThemeToggle />
         {user ? (
           <div
             tabIndex={0}
@@ -172,6 +174,7 @@ const NavBar = () => {
             />
           </div>
         </div> */}
+
         {user ? (
           <button onClick={handleSignOut} className="btn btn-secondary">
             Sign Out

@@ -24,7 +24,7 @@ const AllCraftPage = () => {
               <th>User Email</th>
               <th>Item Name</th>
               <th>Price</th>
-              <th>Action</th>
+              <th>View Details</th>
             </tr>
           </thead>
           <tbody>

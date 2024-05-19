@@ -29,7 +29,11 @@ const router = createBrowserRouter([
       },
       {
         path: "/add-crafts",
-        element: <AddCraftPage />,
+        element: (
+          <PrivateRoutes>
+            <AddCraftPage />,
+          </PrivateRoutes>
+        ),
       },
       {
         path: "/update-crafts/:id",
