@@ -7,7 +7,10 @@ const Layout = () => {
       <div>
         <NavBar />
       </div>
-      <Outlet />
+      <div className="h-screen">
+        <Outlet />
+      </div>
+
       <div>
         <hr className=" bg-slate-300" />
         <Footer />

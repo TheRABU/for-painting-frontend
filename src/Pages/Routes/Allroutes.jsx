@@ -11,6 +11,7 @@ import MyCraftPage from "../My-craft-page/MyCraftPage";
 import AboutPage from "../Aboutpage/AboutPage";
 import PrivateRoutes from "../Routes/PrivateRoute";
 import ErrorPage from "../ErrorPage/ErrorPage";
+import MyViewDetails from "../MyCraft-ViewDetails/MyViewDetails";
 const router = createBrowserRouter([
   {
     path: "/",
@@ -57,6 +58,16 @@ const router = createBrowserRouter([
         ),
         // loader: ({ params }) =>
         //   fetch(`http://localhost:5000/user/${params.email}`),
+      },
+      {
+        path: "/user-view-details/:id",
+        element: (
+          <PrivateRoutes>
+            <MyViewDetails />,
+          </PrivateRoutes>
+        ),
+        loader: ({ params }) =>
+          fetch(`http://localhost:5000/user-view-details/${params.id}`),
       },
       {
         path: "/sign-up",

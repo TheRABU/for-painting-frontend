@@ -88,6 +88,9 @@ const MyCraftCard = ({ eachItem, items, setItems, control, setControl }) => {
           <Link to={`/update-crafts/${_id}`}>
             <button className="btn btn-primary">Update</button>
           </Link>
+          <Link to={`/user-view-details/${_id}`}>
+            <button className="btn btn-link text-blue-700">View Details</button>
+          </Link>
         </div>
       </div>
     </div>
