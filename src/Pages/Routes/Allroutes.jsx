@@ -24,9 +24,8 @@ const router = createBrowserRouter([
         loader: () => fetch("http://localhost:5000/all-crafts"),
       },
       {
-        path: "/all-crafts",
+        path: "/all-crafts-list",
         element: <AllCraftPage />,
-        loader: () => fetch("http://localhost:5000/all-crafts"),
       },
       {
         path: "/add-crafts",
@@ -66,8 +65,8 @@ const router = createBrowserRouter([
             <MyViewDetails />,
           </PrivateRoutes>
         ),
-        loader: ({ params }) =>
-          fetch(`http://localhost:5000/user-view-details/${params.id}`),
+        // loader: ({ params }) =>
+        //   fetch(`http://localhost:5000/user-view-details/${params.id}`),
       },
       {
         path: "/sign-up",

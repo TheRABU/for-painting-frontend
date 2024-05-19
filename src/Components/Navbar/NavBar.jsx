@@ -22,7 +22,7 @@ const NavBar = () => {
         </a>
       </Link>
       <Link
-        to="/all-crafts"
+        to="/all-crafts-list"
         className="px-2 py-2.5 relative rounded group text-white font-medium inline-block"
       >
         <a href="#_" className="relative inline-block text-lg group">
