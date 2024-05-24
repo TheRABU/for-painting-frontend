@@ -53,8 +53,7 @@ const Banner = () => {
           </h1>
 
           <p className="mt-6 mb-8 text-lg sm:mb-12 xl:max-w-3xl dark:text-gray-50">
-            Cupiditate minima voluptate temporibus quia? Architecto beatae esse
-            ab amet vero eaque explicabo!
+            Get the best deals at minimum price !!
           </p>
           <div className="flex flex-wrap justify-center">
             <a href="#craft_section">
@@ -69,7 +68,7 @@ const Banner = () => {
         </div>
       </div>
       <img
-        src="https://source.unsplash.com/random/480x320"
+        src="https://images.unsplash.com/photo-1506806732259-39c2d0268443?q=80&w=2972&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
         alt=""
         className="w-5/6 mx-auto mb-12 -mt-20 dark:bg-gray-500 rounded-lg shadow-md lg:-mt-40"
       />
