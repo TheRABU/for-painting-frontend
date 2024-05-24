@@ -12,8 +12,8 @@ body {
   font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
   font-size: 14px;
   color: #000;
-  margin: 0 auto;
-  padding: 0 auto;
+  margin: 0;
+  padding: 0;
 }
 
 .swiper {
@@ -34,7 +34,8 @@ body {
 
 .swiper-slide img {
   display: block;
-  width: 600px;
+  width: 80%;
   height: 500px;
   object-fit: cover;
+  border-radius: 26px;
 }
