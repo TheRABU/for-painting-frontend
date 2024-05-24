@@ -67,6 +67,10 @@ const CraftCard = ({ craft, crafts, setCrafts }) => {
           />
           <h2 className="mb-1 text-xl font-semibold">{item_name}</h2>
           <p className="text-sm dark:text-gray-600">{short_desc}</p>
+          <span className="indicator-item badge badge-primary">
+            {stock_status}
+          </span>
+          <h3 className="font-bold"> $ {price}</h3>
         </div>
         <div className="flex flex-wrap justify-between">
           <Link
