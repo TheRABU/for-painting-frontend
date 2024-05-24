@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import { Typewriter, useTypewriter, Cursor } from "react-simple-typewriter";
 const Banner = () => {
   const [text] = useTypewriter({
@@ -7,9 +8,6 @@ const Banner = () => {
       "Meet your favorite art collection",
     ],
     loop: 5,
-    onLoopDone: () => {
-      console.log("loop done");
-    },
   });
   return (
     // <section className="bg-gray-50">
@@ -59,18 +57,14 @@ const Banner = () => {
             ab amet vero eaque explicabo!
           </p>
           <div className="flex flex-wrap justify-center">
-            <button
-              type="button"
-              className="px-8 py-3 m-2 text-lg font-semibold rounded dark:bg-gray-100 dark:text-gray-900"
-            >
-              Get started
-            </button>
-            <button
-              type="button"
-              className="px-8 py-3 m-2 text-lg border rounded dark:border-gray-300 dark:text-gray-50"
-            >
-              Learn more
-            </button>
+            <a href="#craft_section">
+              <button
+                type="button"
+                className="px-8 py-3 m-2 text-lg font-semibold rounded dark:bg-gray-100 dark:text-gray-900"
+              >
+                Get started
+              </button>
+            </a>
           </div>
         </div>
       </div>

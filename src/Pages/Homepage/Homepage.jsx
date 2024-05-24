@@ -13,7 +13,7 @@ const Homepage = () => {
       <div>
         <Carousel />
       </div>
-      <div>
+      <div id="craft_section">
         <CraftAndArtSection />
       </div>
       <div>
