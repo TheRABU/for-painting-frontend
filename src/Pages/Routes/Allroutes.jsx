@@ -21,7 +21,7 @@ const router = createBrowserRouter([
       {
         path: "/",
         element: <Homepage />,
-        loader: () => fetch("https://backend1-psi.vercel.app/all-crafts"),
+        loader: () => fetch("http://64.23.188.142:5000/all-crafts"),
       },
       {
         path: "/all-crafts-list",
@@ -39,7 +39,7 @@ const router = createBrowserRouter([
         path: "/update-crafts/:id",
         element: <UpdateCraftPage />,
         loader: ({ params }) =>
-          fetch(`https://backend1-psi.vercel.app/user-items/${params.id}`),
+          fetch(`http://64.23.188.142:5000/user-items/${params.id}`),
       },
       {
         path: "/view-details/craft/:id",
@@ -50,7 +50,7 @@ const router = createBrowserRouter([
         ),
 
         loader: ({ params }) =>
-          fetch(`https://backend1-psi.vercel.app/craft/${params.id}`),
+          fetch(`http://64.23.188.142:5000/craft/${params.id}`),
       },
       {
         path: "/my-listed-crafts",
