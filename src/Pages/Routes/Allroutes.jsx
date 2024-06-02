@@ -21,7 +21,8 @@ const router = createBrowserRouter([
       {
         path: "/",
         element: <Homepage />,
-        loader: () => fetch("http://64.23.188.142:5000/all-crafts"),
+        loader: () =>
+          fetch("https://for-painting-backend.onrender.com/all-crafts"),
       },
       {
         path: "/all-crafts-list",
@@ -39,7 +40,9 @@ const router = createBrowserRouter([
         path: "/update-crafts/:id",
         element: <UpdateCraftPage />,
         loader: ({ params }) =>
-          fetch(`http://64.23.188.142:5000/user-items/${params.id}`),
+          fetch(
+            `https://for-painting-backend.onrender.com/user-items/${params.id}`
+          ),
       },
       {
         path: "/view-details/craft/:id",
@@ -50,7 +53,7 @@ const router = createBrowserRouter([
         ),
 
         loader: ({ params }) =>
-          fetch(`http://64.23.188.142:5000/craft/${params.id}`),
+          fetch(`https://for-painting-backend.onrender.com/craft/${params.id}`),
       },
       {
         path: "/my-listed-crafts",

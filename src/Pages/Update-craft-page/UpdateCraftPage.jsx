@@ -9,7 +9,7 @@ const UpdateCraftPage = () => {
   const { user } = useContext(AuthContext) || {};
 
   useEffect(() => {
-    fetch(`http://64.23.188.142:5000/user-items/${id}`)
+    fetch(`https://for-painting-backend.onrender.com/user-items/${id}`)
       .then((res) => res.json())
       .then((data) => setCraft(data))
       .catch((error) => console.error("Error fetching craft:", error));
@@ -45,7 +45,7 @@ const UpdateCraftPage = () => {
       name,
     };
 
-    fetch(`http://64.23.188.142:5000/user-items/${id}`, {
+    fetch(`https://for-painting-backend.onrender.com/user-items/${id}`, {
       method: "PUT",
       headers: {
         "Content-Type": "application/json",

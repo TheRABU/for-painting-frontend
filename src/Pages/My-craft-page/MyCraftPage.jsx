@@ -9,7 +9,7 @@ const MyCraftPage = () => {
   const [control, setControl] = useState(false);
   // to load data from db
   useEffect(() => {
-    fetch(`http://64.23.188.142:5000/user-items/${user?.email}`)
+    fetch(`https://for-painting-backend.onrender.com/user-items/${user?.email}`)
       .then((res) => res.json())
       .then((data) => setItems(data));
   }, [user, control]);

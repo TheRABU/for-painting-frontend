@@ -37,7 +37,7 @@ const AddCraftPage = () => {
     console.log(newCraft);
 
     // send data to the server
-    fetch("http://64.23.188.142:5000/user/add-items", {
+    fetch("https://for-painting-backend.onrender.com/user/add-items", {
       method: "POST",
       headers: {
         "content-type": "application/json",

@@ -6,7 +6,7 @@ const MyViewDetails = () => {
   const [items, setItems] = useState([]);
 
   useEffect(() => {
-    fetch(`http://64.23.188.142:5000/user-view-details/${id}`)
+    fetch(`https://for-painting-backend.onrender.com/user-view-details/${id}`)
       .then((res) => res.json())
       .then((data) => setItems(data));
   }, [id]);
