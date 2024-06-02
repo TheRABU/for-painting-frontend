@@ -49,7 +49,7 @@ const SignUpPage = () => {
           theme: "colored",
           transition: "Bounce",
         });
-        navigate(location?.state ? location.state : "/");
+        navigate(location?.state?.from || "/");
       })
       .catch((error) => console.log(error));
   };

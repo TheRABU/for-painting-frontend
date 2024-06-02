@@ -15,7 +15,7 @@ const SignInPage = () => {
     const email = form.get("email");
     const password = form.get("password");
     signIn(email, password)
-      .then(navigate(location.state ? location.state : "/"))
+      .then(navigate(location?.state?.from || "/"))
       .catch((error) => {
         console.log(error);
       });
@@ -24,7 +24,7 @@ const SignInPage = () => {
   const handleGoogleSignIn = () => {
     signInWithGoogle()
       .then((result) => {
-        console.log(result.user);
+        navigate(location?.state?.from || "/");
       })
       .catch((error) => {
         console.error(error);
@@ -33,7 +33,7 @@ const SignInPage = () => {
   const handleGithubSignIn = () => {
     signInWithGithub()
       .then((result) => {
-        console.log(result.user);
+        navigate(location?.state?.from || "/");
       })
       .catch((error) => {
         console.error(error);

@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 import Swal from "sweetalert2";
 
 const MyCraftCard = ({ eachItem, items, setItems, control, setControl }) => {
-  const { image_url, item_name, short_desc, _id } = eachItem;
+  const { image_url, item_name, short_desc, _id, customization } = eachItem;
 
   const handleDeleteItem = (_id) => {
     Swal.fire({
@@ -77,7 +77,8 @@ const MyCraftCard = ({ eachItem, items, setItems, control, setControl }) => {
       </figure>
       <div className="card-body items-center text-center">
         <h2 className="card-title">{item_name}</h2>
-        <p>{short_desc}</p>
+        <p>Description: {short_desc}</p>
+        <span>Customization: {customization}</span>
         <div className="card-actions">
           <button
             onClick={() => handleDeleteItem(_id)}

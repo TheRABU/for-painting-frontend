@@ -53,7 +53,9 @@ const router = createBrowserRouter([
         ),
 
         loader: ({ params }) =>
-          fetch(`https://for-painting-backend.onrender.com/craft/${params.id}`),
+          fetch(
+            `https://for-painting-backend.onrender.com/view-details/craft/${params.id}`
+          ),
       },
       {
         path: "/my-listed-crafts",

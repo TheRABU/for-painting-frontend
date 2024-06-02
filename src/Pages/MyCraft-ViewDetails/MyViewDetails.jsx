@@ -26,7 +26,10 @@ const MyViewDetails = () => {
           </figure>
           <div className="card-body">
             <h2 className="card-title">{items.item_name}</h2>
-            <p>{items.short_desc}</p>
+            <p>Description: {items.short_desc}</p>
+            <p>$ {items.price}</p>
+            <h2>Customization: {items.customization}</h2>
+            <p className="text-xl font-bold">Ratings: {items.rating}</p>
           </div>
         </div>
       </div>
