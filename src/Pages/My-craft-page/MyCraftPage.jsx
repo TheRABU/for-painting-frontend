@@ -9,7 +9,7 @@ const MyCraftPage = () => {
   const [control, setControl] = useState(false);
   // to load data from db
   useEffect(() => {
-    fetch(`http://localhost:5000/user-items/${user?.email}`)
+    fetch(`http://64.23.188.142:5000/user-items/${user?.email}`)
       .then((res) => res.json())
       .then((data) => setItems(data));
   }, [user, control]);

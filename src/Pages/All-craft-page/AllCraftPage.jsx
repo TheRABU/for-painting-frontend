@@ -8,7 +8,7 @@ const AllCraftPage = () => {
   const [items, setItems] = useState([]);
   console.log(items);
   useEffect(() => {
-    fetch(`http://localhost:5000/user-all-crafts-list`)
+    fetch(`http://64.23.188.142:5000/user-all-crafts-list`)
       .then((res) => res.json())
       .then((data) => setItems(data));
   }, []);

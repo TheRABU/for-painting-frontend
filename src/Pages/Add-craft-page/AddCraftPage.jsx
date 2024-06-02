@@ -37,7 +37,7 @@ const AddCraftPage = () => {
     console.log(newCraft);
 
     // send data to the server
-    fetch("http://localhost:5000/user/add-items", {
+    fetch("http://64.23.188.142:5000/user/add-items", {
       method: "POST",
       headers: {
         "content-type": "application/json",
